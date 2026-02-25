@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String
+  name          String
+  phone         String?
+  role          String    @default("job_seeker")
+  avatarUrl     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  jobSeekerProfile JobSeekerProfile?
+  employerProfile  EmployerProfile?
+  applications     Application[]
+  sessions         Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model JobSeekerProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  headline        String?
+  summary         String?
+  resumeUrl       String?
+  resumeText      String?
+  location        String?
+  willingToTravel Boolean  @default(false)
+  yearsExperience Int      @default(0)
+  tier            String   @default("free")
+  dailyApplies    Int      @default(0)
+  lastApplyReset  DateTime @default(now())
+  smsOptIn        Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certifications Certification[]
+  skills         Skill[]
+}
+
+model EmployerProfile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  companyName String
+  companyLogo String?
+  website     String?
+  description String?
+  location    String?
+  tier        String   @default("basic")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobs           Job[]
+  pingCampaigns  PingCampaign[]
+}
+
+model Certification {
+  id               String   @id @default(cuid())
+  jobSeekerProfileId String
+  name             String
+  issuer           String?
+  credentialId     String?
+  issuedDate       DateTime?
+  expiryDate       DateTime?
+  documentUrl      String?
+  verified         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  profile JobSeekerProfile @relation(fields: [jobSeekerProfileId], references: [id], onDelete: Cascade)
+}
+
+model Skill {
+  id               String @id @default(cuid())
+  jobSeekerProfileId String
+  name             String
+  level            String @default("intermediate")
+
+  profile JobSeekerProfile @relation(fields: [jobSeekerProfileId], references: [id], onDelete: Cascade)
+}
+
+model Job {
+  id                String   @id @default(cuid())
+  employerProfileId String?
+  title             String
+  company           String
+  description       String
+  requirements      String?
+  location          String
+  locationType      String   @default("on_site")
+  salaryMin         Int?
+  salaryMax         Int?
+  salaryPeriod      String?
+  jobType           String   @default("full_time")
+  category          String   @default("general")
+  certRequired      String?
+  featured          Boolean  @default(false)
+  source            String   @default("direct")
+  sourceUrl         String?
+  atsType           String?
+  latitude          Float?
+  longitude         Float?
+  projectStartDate  DateTime?
+  crewSize          Int?
+  status            String   @default("active")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  expiresAt         DateTime?
+
+  employer     EmployerProfile? @relation(fields: [employerProfileId], references: [id])
+  applications Application[]
+}
+
+model Application {
+  id          String   @id @default(cuid())
+  userId      String
+  jobId       String
+  status      String   @default("pending")
+  coverLetter String?
+  aiDraft     String?
+  submittedAt DateTime?
+  batchId     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  job  Job  @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, jobId])
+}
+
+model PingCampaign {
+  id                String   @id @default(cuid())
+  employerProfileId String
+  name              String
+  message           String
+  targetCerts       String?
+  targetLocation    String?
+  targetRadius      Int?
+  status            String   @default("draft")
+  totalPings        Int      @default(0)
+  responses         Int      @default(0)
+  createdAt         DateTime @default(now())
+
+  employer      EmployerProfile  @relation(fields: [employerProfileId], references: [id], onDelete: Cascade)
+  notifications PingNotification[]
+}
+
+model PingNotification {
+  id             String   @id @default(cuid())
+  campaignId     String
+  recipientPhone String
+  recipientName  String
+  message        String
+  status         String   @default("queued")
+  sentAt         DateTime?
+  readAt         DateTime?
+  createdAt      DateTime @default(now())
+
+  campaign PingCampaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model SmsConsent {
+  id        String   @id @default(cuid())
+  phone     String
+  consented Boolean  @default(true)
+  consentText String
+  ipAddress String?
+  createdAt DateTime @default(now())
+  revokedAt DateTime?
+}
