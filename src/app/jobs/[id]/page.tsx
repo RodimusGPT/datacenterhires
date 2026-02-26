@@ -114,10 +114,6 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
                   <dt className="text-muted">Location Type</dt>
                   <dd className="font-medium capitalize">{job.locationType.replace("_", " ")}</dd>
                 </div>
-                <div className="flex justify-between">
-                  <dt className="text-muted">Source</dt>
-                  <dd className="font-medium capitalize">{job.source}</dd>
-                </div>
               </dl>
             </div>
           </div>
