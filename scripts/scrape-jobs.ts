@@ -29,11 +29,20 @@ export const APPLY_LINKS: { apply_links: string[] } = {
     "https://jobs.smartrecruiters.com/T5DataCenters1/3743990007647806-regional-safety-manager",
     "https://jobs.smartrecruiters.com/T5DataCenters1/3743990007121556-procurement-manager-mep-",
     "https://jobs.smartrecruiters.com/T5DataCenters1/3743990006377836-safety-manager",
-    // Pkaza Critical Facilities Recruiting
+    "https://jobs.smartrecruiters.com/T5DataCenters1/3743990007386466-safety-manager",
+    // Pkaza Critical Facilities Recruiting (pkaza.com)
     "https://www.pkaza.com/job/electrical-commissioning-engineer-ashburn-va-dfeb4615-1b64-4c80-984e-4ade0804036f/",
     "https://www.pkaza.com/job/electrical-project-manager-data-center-construction-augusta-ga-fc7894c2-85dd-4595-9e24-60de08044740/",
     "https://www.pkaza.com/job/mechanical-superintendent-data-center-construction-chesterton-in-5a2eb7f2-b9ef-4d5b-ba33-60de08044944/",
     "https://www.pkaza.com/job/onsite-engineer-critical-facilities-charleston-sc-3992f1b3-1224-4514-8166-60de0804133e/",
+    "https://www.pkaza.com/job/electrical-estimator-data-center-construction-atlanta-ga-5c7bc390-d26b-40ee-61af-e69e1cb3dc08/",
+    "https://www.pkaza.com/job/electrical-assistant-project-manager-ashburn-va-c6816470-9ae7-4b44-dd55-d7ec4e2fdd08/",
+    "https://www.pkaza.com/job/director-of-data-center-construction-ashburn-va-b25c173c-30a2-4371-04dc-5352cdebdb08/",
+    // Pkaza via Crelate ATS (jobs.crelate.com/portal/pkaza)
+    "https://jobs.crelate.com/portal/pkaza/job/ie8gx7w3yhkrkobooikpdth7ao",
+    "https://jobs.crelate.com/portal/pkaza/job/gp3uzt45m74gs6icgmd5qeiqih",
+    "https://jobs.crelate.com/portal/pkaza/job/kcx19g3keiw1y54abjyymam3sr",
+    "https://jobs.crelate.com/portal/pkaza/job/iy9okswtyw1aymuf6fd1k7mi1e",
   ],
 };
 
@@ -411,6 +420,223 @@ export const RAW_SCRAPED_JOBS: unknown[] = [
       "Non-traveling onsite engineer supporting multiple data center builds in the Charleston, SC region. Provide MEP engineering support during construction and commissioning phases, manage construction documentation, and serve as technical liaison between design engineers and site contractors. EIT or PE license a plus.",
     requirements:
       "Engineering degree (mechanical or electrical preferred). Experience with MEP systems in data center or mission-critical environments. AutoCAD, Revit, BIM proficiency. Strong communication skills for stakeholder coordination. EIT or PE license beneficial.",
+  },
+
+  // ── Batch 2: Additional jobs (Feb 2026) ──────────────────────────────────────
+  {
+    job_title: "Safety Manager – Data Center Construction",
+    company_name: "T5 Data Centers",
+    location: "Denton, TX",
+    job_type: "Full-time",
+    certifications_required: ["OSHA 510", "CHST"],
+    skills: [
+      "Construction Safety Management",
+      "OSHA Compliance",
+      "Incident Investigation",
+      "EHS Dashboards & Metrics",
+      "Safety Training & Coaching",
+      "Contractor Oversight",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.smartrecruiters.com/T5DataCenters1/3743990007386466-safety-manager",
+    description:
+      "T5 Data Centers seeks a Safety Manager to implement and oversee safety, security, and environmental compliance programs across data center construction projects in Denton, TX. Responsibilities include conducting daily site inspections, leading safety training sessions, investigating incidents, managing document control, ensuring OSHA compliance, and maintaining EHS dashboards. General Contractor background strongly preferred.",
+    requirements:
+      "Bachelor's degree or equivalent preferred. 5+ years direct construction safety experience. OSHA 510 and/or 500 preferred; CHST or CSP a plus. Exceptional leadership, verbal, and written communication skills. Ability to stand, walk, climb, and lift up to 100 lbs.",
+  },
+  {
+    job_title: "Safety Manager – Data Center Construction",
+    company_name: "T5 Data Centers",
+    location: "Atlanta, GA",
+    job_type: "Full-time",
+    certifications_required: ["OSHA 510", "CHST"],
+    skills: [
+      "Construction Safety Management",
+      "OSHA Compliance",
+      "Incident Investigation",
+      "EHS Dashboards & Metrics",
+      "Safety Training & Coaching",
+      "Contractor Oversight",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.smartrecruiters.com/T5DataCenters1/3743990006377836-safety-manager",
+    description:
+      "T5 Data Centers is hiring a site-level Safety Manager to manage safety, security, and environmental compliance across data center construction projects in Atlanta, GA. You will conduct site inspections, lead safety training, investigate incidents, coordinate with subcontractors on safety standards, and report EHS metrics. Seeking safety professionals with a General Contractor background and a commitment to zero-incident culture.",
+    requirements:
+      "Bachelor's degree or equivalent preferred. 5+ years construction safety experience preferred. OSHA 510 and/or 500 preferred; CHST or CSP a plus. Strong organizational and communication skills. Ability to work in variable outdoor conditions.",
+  },
+  {
+    job_title: "Senior Electrical Estimator – Data Center Construction",
+    company_name: "Established Electrical Contracting Firm",
+    location: "Atlanta, GA",
+    job_type: "Full-time",
+    certifications_required: [],
+    skills: [
+      "Electrical Construction Estimating",
+      "Bid Preparation & Proposal Development",
+      "Accubid / McCormick / ConEst",
+      "Bluebeam",
+      "Electrical Code & Voltage-Drop Calculations",
+      "Team Leadership",
+      "Client Relationship Management",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://www.pkaza.com/job/electrical-estimator-data-center-construction-atlanta-ga-5c7bc390-d26b-40ee-61af-e69e1cb3dc08/",
+    description:
+      "Join a leading electrical contracting firm as a Senior Electrical Estimator focused on data center construction in Atlanta, GA. You will develop accurate electrical estimates for bids ranging $10–$100M, perform budget pricing from schematic drawings, attend job walks and pre-bid meetings, maintain estimating databases, and lead junior estimators through proposal development. Critical Facilities experience preferred.",
+    requirements:
+      "3–7 years estimating and preconstruction experience on large electrical projects. Proficiency in Accubid, McCormick, Bluebeam, or ConEst. Strong understanding of electrical codes, voltage-drop calculations, and conduit-fill requirements. Excellent written and verbal communication. Military/veteran electrical or mechanical background is a significant asset.",
+  },
+  {
+    job_title: "Electrical Assistant Project Manager – Data Center",
+    company_name: "National Electrical Contracting Firm",
+    location: "Ashburn, VA",
+    job_type: "Full-time",
+    certifications_required: [],
+    skills: [
+      "Data Center Electrical Construction",
+      "UPS / Switchgear / PDU Systems",
+      "Budget Management ($10M–$50M)",
+      "Commissioning Coordination",
+      "MS Project",
+      "Timberline",
+      "Team Leadership",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://www.pkaza.com/job/electrical-assistant-project-manager-ashburn-va-c6816470-9ae7-4b44-dd55-d7ec4e2fdd08/",
+    description:
+      "An established electrical contracting firm is seeking an Electrical Assistant Project Manager for data center and critical facilities projects in Ashburn, VA. You will supervise electrical subcontractors and self-performed work, manage budgets, maintain stakeholder communications, implement site safety programs, and support project closeout. Candidates with 8+ years of data center MEP construction experience and backup power systems expertise are strongly preferred.",
+    requirements:
+      "8+ years of data center or critical facilities MEP construction experience. Expertise in UPS, switchgear, and power distribution systems. Proficiency in MS Project and Timberline. Strong leadership and communication skills. Military background in electrical or mechanical fields is a major asset.",
+  },
+  {
+    job_title: "Director of Data Center Construction",
+    company_name: "Colocation Data Center Provider",
+    location: "Ashburn, VA",
+    job_type: "Full-time",
+    certifications_required: [],
+    skills: [
+      "Mission-Critical Construction PM",
+      "Multi-Project P&L Management",
+      "Client-Facing Relationship Management",
+      "Modular Data Center Construction",
+      "Business Development / RFP",
+      "Data Center Building Systems Design",
+      "AFCOM / ASHRAE / 7x24 Exchange",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://www.pkaza.com/job/director-of-data-center-construction-ashburn-va-b25c173c-30a2-4371-04dc-5352cdebdb08/",
+    description:
+      "A leading colocation provider is hiring a Director of Data Center Construction in Ashburn, VA to lead mission-critical construction programs with $50–$100M+ budgets. You will direct planning and execution of modular and traditional data center builds, establish project standards, manage client relationships, and oversee the PM team from preconstruction through turnover. Full P&L ownership required. Military background (Navy nuclear, Seabees, Army power generation) strongly valued.",
+    requirements:
+      "Extensive client-facing construction PM experience with full P&L ownership across multiple concurrent projects. Familiarity with data center building systems design. Experience with modular data center builds preferred. Involvement in professional orgs (AFCOM, ASHRAE, 7×24 Exchange) a plus. Business development and RFP/RFI experience required.",
+  },
+  {
+    job_title: "Data Center MEP Superintendent",
+    company_name: "National General Contractor",
+    location: "Atlanta, GA",
+    job_type: "Full-time",
+    certifications_required: ["OSHA 30"],
+    skills: [
+      "MEP Coordination",
+      "HVAC / Chilled Water",
+      "Electrical Power Distribution",
+      "Plumbing Systems",
+      "Subcontractor Management",
+      "Procore",
+      "MS Project",
+    ],
+    per_diem_offered: true,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.crelate.com/portal/pkaza/job/ie8gx7w3yhkrkobooikpdth7ao",
+    description:
+      "A national general contractor is seeking a Data Center MEP Superintendent to oversee all mechanical, electrical, and plumbing installation and coordination for hyperscale data center projects in Atlanta, GA. Additional positions available in Dallas, TX, Houston, TX, Kansas City, MO, and Chicago, IL. You will manage MEP subcontractors, resolve field conflicts, ensure quality and schedule compliance, and coordinate with commissioning teams during systems turnover. Per diem available for travel assignments.",
+    requirements:
+      "5–10 years of field supervision experience in MEP construction, with data center or mission-critical project experience strongly preferred. OSHA 30 required. Proficiency in Procore and MS Project. Strong leadership and coordination skills. Willingness to travel Mon–Fri on-site.",
+  },
+  {
+    job_title: "Electrical Commissioning Engineer – Data Center",
+    company_name: "AEC / Commissioning Firm",
+    location: "New Albany, OH",
+    job_type: "Full-time",
+    certifications_required: [],
+    skills: [
+      "Electrical Power Systems",
+      "Load Bank Testing",
+      "Commissioning Levels 1–5",
+      "UPS / Switchgear / Generators",
+      "SOP / MOP Development",
+      "Power Quality Analysis",
+      "High-Voltage Systems",
+    ],
+    per_diem_offered: true,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.crelate.com/portal/pkaza/job/gp3uzt45m74gs6icgmd5qeiqih",
+    description:
+      "An AEC and commissioning firm is hiring a traveling Electrical Commissioning Engineer for data center projects based out of New Albany, OH. Also available in Atlanta, GA, Nashville, TN, Dallas, TX, Chicago, IL, and Ashburn, VA. Perform Level 1–5 electrical commissioning, load bank testing, power quality analysis, and develop SOPs/MOPs for electrical systems including UPS, switchgear, and generators. Per diem provided for travel assignments.",
+    requirements:
+      "4–10+ years of electrical power systems experience in data center or mission-critical environments. Strong commissioning test procedure knowledge. Extensive travel required. Proficiency in Microsoft Office (Word, Excel, Project).",
+  },
+  {
+    job_title: "Mechanical Commissioning Engineer – Data Center",
+    company_name: "MEP Engineering & Commissioning Firm",
+    location: "Atlanta, GA",
+    job_type: "Full-time",
+    certifications_required: [],
+    skills: [
+      "HVAC / Chilled Water Commissioning",
+      "Cooling Tower Systems",
+      "CRAC / CRAH Units",
+      "AHU Testing & Balancing",
+      "Commissioning Levels 1–5",
+      "SOP / MOP Development",
+      "AutoCAD",
+    ],
+    per_diem_offered: true,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.crelate.com/portal/pkaza/job/kcx19g3keiw1y54abjyymam3sr",
+    description:
+      "A specialized MEP engineering and commissioning firm is seeking a Mechanical Commissioning Engineer for data center projects in Atlanta, GA. Additional positions available in Nashville, TN, New Albany, OH, Charlotte, NC, Richmond, VA, and Dallas, TX. Perform Levels 1–5 mechanical commissioning of HVAC systems, cooling towers, CRAC/CRAH units, AHUs, and chilled water infrastructure. Develop and execute SOPs and MOPs for mission-critical mechanical systems. Per diem offered for travel.",
+    requirements:
+      "5+ years of mechanical/HVAC commissioning experience, preferably in data center or mission-critical environments. Level 1–5 commissioning experience required. Strong documentation skills for SOP/MOP writing. AutoCAD proficiency preferred. Willingness to travel extensively.",
+  },
+  {
+    job_title: "Data Center Construction Project Manager",
+    company_name: "Mission-Critical General Contractor",
+    location: "Dallas, TX",
+    job_type: "Full-time",
+    certifications_required: ["PMP"],
+    skills: [
+      "Data Center Construction PM",
+      "Hyperscale Project Management",
+      "Budget & Schedule Control",
+      "Subcontractor Management",
+      "Owner's Rep Interface",
+      "Procore",
+      "MS Project",
+      "Oracle Primavera P6",
+    ],
+    per_diem_offered: false,
+    salary_range: "Competitive",
+    apply_url:
+      "https://jobs.crelate.com/portal/pkaza/job/iy9okswtyw1aymuf6fd1k7mi1e",
+    description:
+      "A leading mission-critical general contractor is hiring a Data Center Construction Project Manager for hyperscale builds in Dallas, TX. Additional positions in New Albany, OH, Chicago, IL, Charlotte, NC, Ashburn, VA, and Kansas City, MO. Manage all phases of data center construction from preconstruction through commissioning and turnover. Drive budget, schedule, and quality across trades while serving as primary client interface. PMP preferred.",
+    requirements:
+      "5–10 years of data center construction project management experience. Demonstrated success managing $50M+ projects. Proficiency in Procore, MS Project, and/or Primavera P6. Strong client-facing communication skills. PMP preferred. GC or construction management firm background required.",
   },
 ];
 
