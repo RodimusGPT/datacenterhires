@@ -106,23 +106,16 @@ const HOUSTON_JOBS = [
 ];
 
 async function seed() {
-  console.log("Seeding database...");
-  await prisma.application.deleteMany();
-  await prisma.pingNotification.deleteMany();
-  await prisma.pingCampaign.deleteMany();
-  await prisma.job.deleteMany();
-  await prisma.certification.deleteMany();
-  await prisma.skill.deleteMany();
-  await prisma.jobSeekerProfile.deleteMany();
-  await prisma.employerProfile.deleteMany();
-  await prisma.session.deleteMany();
-  await prisma.smsConsent.deleteMany();
-  await prisma.user.deleteMany();
-
-  for (const jobData of HOUSTON_JOBS) {
-    await prisma.job.create({ data: jobData });
+  const existing = await prisma.job.count({ where: { source: "seed" } });
+  if (existing > 0) {
+    console.log(`Seed skipped — ${existing} seed jobs already present.`);
+    return;
   }
 
+  console.log("Seeding database with Houston base jobs...");
+  for (const jobData of HOUSTON_JOBS) {
+    await prisma.job.create({ data: { ...jobData, source: "seed" } });
+  }
   console.log(`Seeded ${HOUSTON_JOBS.length} jobs`);
 }
 
