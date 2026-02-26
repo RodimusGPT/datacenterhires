@@ -74,17 +74,7 @@ export const APPLY_LINKS: { apply_links: string[] } = {
 
 // ─── Step 2: Zod extraction schema ───────────────────────────────────────────
 
-/**
- * States included in the US South + Midwest filter.
- * Jobs outside this set are rejected (return null for the entire object).
- */
-const SOUTH_MIDWEST = new Set([
-  // South
-  "TX", "GA", "VA", "NC", "SC", "TN", "AL", "MS", "LA", "AR", "OK",
-  "KY", "WV", "MD", "DE", "FL",
-  // Midwest
-  "OH", "IN", "IL", "MI", "WI", "MN", "IA", "MO", "ND", "SD", "NE", "KS",
-]);
+// Region filter removed — accepting data center jobs worldwide.
 
 export const ScrapedJobSchema = z.object({
   /** Raw job title from the posting */
@@ -143,15 +133,7 @@ function parseSalary(range: string): {
   };
 }
 
-/**
- * Returns true if location is in the US South or Midwest (or unknown).
- * Rejects non-matching state codes per the extraction constraints.
- */
-function isInRegion(location: string | null): boolean {
-  if (!location) return true;
-  const m = location.match(/,\s*([A-Z]{2})\b/);
-  return m ? SOUTH_MIDWEST.has(m[1]) : true;
-}
+// isInRegion removed — no geographic filtering.
 
 /** Normalizes job_type string to a Prisma-safe enum value. */
 function mapJobType(raw: string | null): string {
@@ -192,11 +174,6 @@ export function validateAndMap(raw: unknown) {
   }
 
   const job = result.data;
-
-  if (!isInRegion(job.location)) {
-    console.log(`⏭  Skipped (out of region): ${job.job_title} @ ${job.location}`);
-    return null;
-  }
 
   const { salaryMin, salaryMax, salaryPeriod } = parseSalary(job.salary_range);
 

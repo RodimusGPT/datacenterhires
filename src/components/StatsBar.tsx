@@ -1,10 +1,10 @@
 import { Briefcase, Users, MapPin, TrendingUp } from "lucide-react";
 
 const stats = [
-  { icon: Briefcase, label: "Active Listings", value: "2,400+", color: "text-primary" },
-  { icon: Users, label: "Certified Pros", value: "12,000+", color: "text-success" },
-  { icon: MapPin, label: "Project Sites", value: "180+", color: "text-accent" },
-  { icon: TrendingUp, label: "Growth (YoY)", value: "327%", color: "text-danger" },
+  { icon: Briefcase, label: "Active Listings", value: "New Daily", color: "text-primary" },
+  { icon: Users, label: "Certified Pros", value: "Growing", color: "text-success" },
+  { icon: MapPin, label: "Regions", value: "Worldwide", color: "text-accent" },
+  { icon: TrendingUp, label: "Industry Growth", value: "Booming", color: "text-danger" },
 ];
 
 export default function StatsBar() {

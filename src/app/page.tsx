@@ -22,11 +22,11 @@ export default async function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 badge bg-white/20 text-white text-sm px-4 py-1.5 mb-6">
-              <MapPin className="h-4 w-4" /> Now Hiring: Houston Energy Corridor
+              <MapPin className="h-4 w-4" /> Now Hiring: Worldwide
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
               Build the Backbone of{" "}
-              <span className="text-accent">America&apos;s AI</span>{" "}
+              <span className="text-accent">Global AI</span>{" "}
               Infrastructure
             </h1>
             <p className="mt-6 text-lg md:text-xl text-blue-100 max-w-2xl">
@@ -92,7 +92,7 @@ export default async function Home() {
                   },
                   {
                     step: "2",
-                    title: "Browse 2,400+ Data Center Jobs",
+                    title: "Browse Data Center Jobs Worldwide",
                     desc: "Filter by trade, certification, location, and salary. See crew sizes and project timelines.",
                   },
                   {
@@ -127,7 +127,7 @@ export default async function Home() {
                   {
                     step: "1",
                     title: "Post Jobs or Browse the Database",
-                    desc: "List positions from $100 or search 12,000+ certified professionals directly.",
+                    desc: "List positions or search our growing database of certified professionals directly.",
                   },
                   {
                     step: "2",
@@ -164,8 +164,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-foreground">Latest Houston Openings</h2>
-              <p className="text-muted mt-1">Phase 1: Energy Corridor &amp; Greater Houston Area</p>
+              <h2 className="text-3xl font-bold text-foreground">Latest Openings</h2>
+              <p className="text-muted mt-1">Data center construction and operations roles worldwide</p>
             </div>
             <Link href="/jobs" className="hidden sm:flex items-center gap-1 text-primary font-semibold hover:underline">
               View All Jobs <ArrowRight className="h-4 w-4" />
@@ -192,8 +192,8 @@ export default async function Home() {
             $3 Trillion in Infrastructure Spending. Your Skills Are in Demand.
           </h2>
           <p className="mt-4 text-blue-100 text-lg max-w-2xl mx-auto">
-            Data center construction is growing 327% in Houston alone. Don&apos;t miss the biggest
-            buildout in American history.
+            Data center construction is booming worldwide. Don&apos;t miss the biggest
+            infrastructure buildout in history.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/signup" className="btn-accent text-lg">

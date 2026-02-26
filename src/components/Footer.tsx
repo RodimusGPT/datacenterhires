@@ -41,10 +41,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3 text-gray-200">Coverage</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Houston / Katy, TX</li>
-              <li>Atlanta, GA</li>
-              <li>Columbus, OH</li>
-              <li>Chicago, IL</li>
+              <li>United States</li>
+              <li>Europe</li>
+              <li>Asia-Pacific</li>
+              <li>Global</li>
             </ul>
           </div>
         </div>
