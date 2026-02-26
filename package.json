@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma migrate deploy && next build",
+    "build": "prisma generate && prisma migrate deploy && npx tsx prisma/seed.mts && npx tsx scripts/scrape-jobs.ts && next build",
     "postinstall": "prisma generate",
     "start": "next start",
     "lint": "eslint",
@@ -31,6 +31,7 @@
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "zod": "^3.25.0"
   },
@@ -39,7 +40,6 @@
     "dotenv": "^17.3.1",
     "eslint": "^9",
     "jest": "^30.2.0",
-    "ts-jest": "^29.4.6",
-    "tsx": "^4.21.0"
+    "ts-jest": "^29.4.6"
   }
 }
